@@ -1,0 +1,356 @@
+* {
+    cursor: url("arrow.png"), auto;
+    --ms-gray: #bfbec0;
+}
+
+html{
+    overflow: hidden;
+}
+body {
+    padding: 0;
+    font-size: 1.3rem;
+    margin: auto;
+    background: #007f80;
+    font-family: "Inter";
+    height: 100svh;
+}
+
+#taskbar {
+    z-index: 999;
+    background: var(--ms-gray);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    height: 54px;
+    outline: 3px white outset;
+}
+
+#start {
+    user-select:none;
+    position: absolute;
+    left: 2px;
+    display: flex;
+    align-items: center;
+    background: #c0c4c8;
+    height: 90%;
+    font-size: 1.65rem;
+    width: fit-content;
+    border: outset #a2a2a2 3px;
+    &:active,&.clicked{
+        border: inset #a2a2a2 3px;
+    }
+}
+
+#startLogo {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-right: 5px;
+
+    & img {
+        width: 37px;
+        height: 37px;
+    }
+}
+
+#startMenu {
+    user-select: none;
+    display: none;
+    width: fit-content;
+    height: 300px;
+    background: var(--ms-gray);
+    outline: 3px white outset;
+    position: absolute;
+    bottom: 54px;
+    left: 3px;
+
+    & ul {
+        list-style-type: none;
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    & li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px 2px 2px 0;
+    }
+
+    & li img {
+        width: 30px;
+        height: 30px;
+    }
+
+    & li:hover {
+        background: #0000a0c4;
+        color: white;
+    }
+}
+
+#bookmark {
+    background: #87888f;
+    height: 100%;
+    width: 30px;
+
+    & > span {
+        position: absolute;
+        bottom: 67px;
+        rotate: -90deg;
+        left: -45px;
+        font-weight: bold;
+        color: #c0c7c8;
+        font-size: 1.3rem;
+    }
+}
+#plus{
+    font-size: 2rem;
+}
+#time {
+    position: absolute;
+    right: 10px;
+    height: 80%;
+    background: #c0c0c0;
+    outline: inset 2px #ababab;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 1.6rem;
+    padding: 0 16px;
+}
+
+#desktop {
+    background: #007f80;
+    overflow: hidden;
+    width: 100%;
+    height: calc(100svh - 54px);
+}
+
+#selection {
+    position: absolute;
+    border: whitesmoke dotted 2px;
+    border-radius: 2px;
+    z-index: 0;
+}
+
+.app {
+    min-width: 150px;
+    min-height: 150px;
+    width: fit-content;
+    width: 585px;
+    height: 420px;
+    position: absolute;
+    padding: 11px 4px;
+    background: #c0c7c8;
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+    & iframe {
+        width: calc(100% - 6px);
+        height: calc(100% - 52px);
+        user-select: none;
+    }
+}
+
+hr {
+    width: 90%;
+}
+
+#activeWindow {
+    z-index: 2;
+
+    & .bar {
+        background: #0000a8;
+    }
+}
+
+.bar {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    position: relative;
+    background: #87888f;
+    top: -7px;
+    height: 36px;
+    width: 100%;
+}
+
+.boxPreview {
+    box-sizing: border-box;
+    z-index: 90;
+    border: 7px darkgray solid;
+    position: absolute;
+}
+
+#icons {
+    padding: 15px;
+}
+
+.ico {
+    user-select: none;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 112px;
+
+    & img {
+        width: 48px;
+        aspect-ratio: 1;
+    }
+}
+
+.text {
+    margin-top: 3px;
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: black 1px 1px 0px;
+    word-wrap: break-word;
+}
+
+
+#selectedFromClick .text {
+    outline: 2px white dotted;
+}
+
+.selected {
+    & img {
+        filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
+    }
+    & .text {
+        background: #0000a092;
+    }
+}
+
+.b {
+    position: relative;
+    user-select: none;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background: #c0c4c8;
+    border: outset #a2a2a2 2px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    &:active {
+        border: 2px inset #a2a2a2;
+    }
+}
+
+.resizable-border {
+    cursor: nwse-resize;
+    cursor: url("resize.png"), auto;
+    position: absolute;
+    width: 19px;
+    aspect-ratio: 1;
+    bottom: 0px;
+    right: 0px;
+    background-image: url(icons/navigation/resize.svg);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.close{
+    margin: 0 5px;
+    background-image:url(icons/navigation/close.svg);
+    background-size: 80%;
+}
+.maximize{
+    background-image:url(icons/navigation/maximize.svg);
+    background-size: 80%;
+}
+.minimize{
+    background-image:url(icons/navigation/minimize.svg);
+    background-size: 60%;
+    background-position: 3px 11px;
+}
+.overlap{
+    background-image:url(icons/navigation/overlap.svg);
+    background-size: 80%;
+}
+#tasks{
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    align-items:center;
+    position: absolute;
+    max-width: calc(100vw - 240px);
+    left: 120px;
+    height: 100%;
+    & hr{
+        height: 80%;
+        margin: 10px;
+    }
+}
+
+.task{
+    padding:1px 3px;
+    margin:0 3px;
+    border: outset #a2a2a2 3px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    user-select:none;
+    & img{
+        width: 28px;
+    };
+}
+#activeTask{
+    border: inset #a2a2a2 3px;
+}
+.minimized{
+    animation: minimized_animation 0.1s forwards;
+}
+@keyframes minimized_animation {
+    0%{
+        scale: 1;
+    }
+    100%{
+        scale: 0.2;
+        display: none;
+    }
+}
+.maximized{
+    width: calc(100svw - 8px) !important;
+    height: calc(100svh - 54px - 5px) !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+@media (max-width: 768px) {
+    #time{
+        display: none;
+    }
+    #tasks{
+        max-width: calc(100vw - 100px);
+    }
+    #start{
+        font-size: 1em;
+        padding-right: 10px;
+    }
+    #startLogo {
+        width: 35px;
+        height: 35px;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    #tasks{
+        left:100px
+    }
+    .app{
+        width: fit-content;
+    }
+}
+.temp{
+    display: none;
+}

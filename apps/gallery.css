@@ -1,0 +1,111 @@
+* {
+    cursor: url("../arrow.png"), auto;
+    --ms-gray: #bfbec0;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: var(--ms-gray);
+}
+#grid{
+    display: none;
+    flex-wrap: wrap;
+}
+.photo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 1px;
+    box-sizing: border-box;
+    padding: 2px;
+
+    & p{
+        padding: 0;
+        margin: 2px;
+        font-size: .9rem;
+        word-break: break-all;
+    }
+
+    &:hover{
+        outline: gray dashed 1px;
+        & p{
+            color: blue;
+        }
+    }
+}
+#grid img{
+    aspect-ratio: initial;
+    max-height: 300px;
+    max-width: 100%;
+}
+input:checked ~ #individual{
+    display: none;
+}
+input:checked ~ #grid{
+    display: flex;
+}
+input{
+    position: relative;
+    top: 0;
+    left: 0;
+    appearance: none;
+    background: white;
+    border: 2px solid black;
+    width: 30px;
+    height: 30px;
+    &::after{
+        background: url("../icons/group.svg");
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center;
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    &:checked::after{
+        background: url("../icons/individual.svg");
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+#individual img{
+    max-width: 100vw;
+    max-height: 100%;
+}
+#individual #image{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buttons{
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+button {
+    margin: 5px;
+    user-select:none;
+    background: #c0c4c8;
+    height: 90%;
+    font-size: 1.3rem;
+    width: fit-content;
+    border: outset #a2a2a2 3px;
+    &:active,&.clicked{
+        border: inset #a2a2a2 3px;
+    }
+}
+#info{
+    color: black;
+}

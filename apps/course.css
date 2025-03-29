@@ -1,0 +1,38 @@
+* {
+    cursor: url("../arrow.png"), auto;
+}
+body{
+    background: white;
+}
+main{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+}
+section{
+    max-width: 80ch;
+}
+h1{
+    background: #89dceb;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: black 2px 2px 3px;
+}
+img{
+    margin: 5px;
+    border: dashed blueviolet 2px;
+    padding: 2px;
+    float:left;
+    max-width: 100%;
+}
+p{
+    font-size: 1.2rem;
+}
+@media (max-width: 452px) {
+    img{
+        float: none;
+    }
+    section{
+        text-align:center;
+    }
+}

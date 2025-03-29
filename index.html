@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ERASUMS+</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    
+    <iframe src="apps/info.html" class="temp"></iframe>
+    <iframe src="apps/participants.html" class="temp"></iframe>
+    <iframe src="apps/gallery.html" class="temp"></iframe>
+    <iframe src="apps/course.html" class="temp"></iframe>
+    <img src="icons/navigation/close.svg" class="temp" alt="">
+    <img src="icons/navigation/maximize.svg" class="temp" alt="">
+    <img src="icons/navigation/minimize.svg" class="temp" alt="">
+    <img src="icons/navigation/overlap.svg" class="temp" alt="">
+    <img src="icons/navigation/resize.svg" class="temp" alt="">
+    <section id="desktop">
+      <div id="icons">
+            <div class="ico" data-app="info">
+                <img src="icons/info.png" alt="">
+                <div class="text">Informacje</div>
+            </div>
+            <div class="ico" data-app="participants">
+                <img src="icons/participants.png" alt="">
+                <div class="text">Uczestnicy</div>
+            </div>
+            <div class="ico" data-app="gallery">
+                <img src="icons/gallery.png" alt="">
+                <div class="text">Galeria</div>
+            </div>
+            <div class="ico" data-app="course">
+                <img src="icons/course.png" alt="">
+                <div class="text">Przebieg</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="taskbar">
+      <button id="start">
+        <span id="startLogo"><img src="icons/logo.png" alt="" /></span>
+        <span>Start</span>
+      </button>
+      <section id="startMenu">
+                <div id="bookmark">
+                    <span>ERASMUS<span id="plus">+</span></span>
+                </div>
+                <div id="apps">
+                    <ul>
+                        <li data-app="info" class="startApp"><img src="icons/info.png">Informacje</li>
+                        <li data-app="participants" class="startApp"><img src="icons/participants.png">Uczestnicy</li>
+                        <li data-app="gallery" class="startApp"><img src="icons/gallery.png">Galeria</li>
+                        <li data-app="course" class="startApp"><img src="icons/course.png">Przebieg</li>
+                    </ul>
+                    <hr>
+                </div>
+      </section>
+      <section id="tasks">
+            <hr>
+    </section>
+
+      <div id="time"><span>21:37</span></div>
+    </section>
+  </body>
+</html>
