@@ -125,6 +125,10 @@ body {
 
 #desktop {
     background: #007f80;
+    background-image: url(../photos/backgrounds/background1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     width: 100%;
     height: calc(100svh - 54px);
